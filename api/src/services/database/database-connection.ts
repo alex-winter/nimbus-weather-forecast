@@ -1,4 +1,4 @@
-import {config} from '../config'
+import {config} from '../../config'
 
 export const databaseConnection = require('knex')({
   client: 'mysql2',

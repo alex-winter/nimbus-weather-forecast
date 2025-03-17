@@ -3,6 +3,7 @@ import {QueryParameters} from '../types'
 import {config} from '../config'
 import {Repository as LocationRepository} from '../services/location-api/repository'
 import {OpenMetroApi} from '../services/location-api/open-metro/open-metro'
+import {Locations} from '../services/database/locations'
 
 //@ts-ignore
 export const locationsRequestHandler = async (request: Request, response: Response): Response => {
@@ -14,9 +15,9 @@ export const locationsRequestHandler = async (request: Request, response: Respon
             .json({error: 'Invalid Search, must have query parameter "search" with at least 2 characters'})
     }
 
-    const locationsApi = new LocationRepository(new OpenMetroApi());
+    const repository = new LocationRepository(new OpenMetroApi(), new Locations());
 
-    const locations = await locationsApi.search(search);
+    const locations = await repository.search(search);
 
     return response.json({
         locations

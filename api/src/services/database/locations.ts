@@ -1,7 +1,8 @@
 import {Location} from '../../models/location'
-import {databaseConnection} from '../database-connection'
+import {databaseConnection} from './database-connection'
 
-export class LocationRepository {
+export class Locations
+{
     public async search(query: string): Promise<Location[]>
     {
         try {
@@ -17,6 +18,22 @@ export class LocationRepository {
              */
 
             return [];
+        }
+    }
+
+    public async insert(locations: Location[]): Promise<void> {
+        if (!locations.length) {
+            return;
+        }
+
+        try {
+            await databaseConnection('locations').insert(locations);
+        } catch (error) {
+            console.error('Failed to insert locations:', error);
+
+            /**
+             * Something like sentry here
+             */
         }
     }
 }
