@@ -22,4 +22,11 @@ export const config = {
         forecast: weatherApiBaseUrl + 'forecast.json',
         apiKey: process.env.WEATHER_API_KEY || '',
     },
+
+    database: {
+        host: process.env.DATABASE_HOST,
+        password: process.env.DATABASE_PASSWORD,
+        name: process.env.DATABASE_NAME,
+        user: process.env.DATABASE_USER,
+    }
 };

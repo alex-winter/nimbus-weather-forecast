@@ -1,11 +1,11 @@
 import {Location} from '../../models/location'
-import {knex} from 'knex'
+import {databaseConnection} from '../database-connection'
 
-export class Locations {
+export class LocationRepository {
     public async search(query: string): Promise<Location[]>
     {
         try {
-            return await knex('locations')
+            return await databaseConnection('locations')
                 .where('name', 'like', `%${query}%`)
                 .orWhere('country', 'like', `%${query}%`)
                 .limit(6);
