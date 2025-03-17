@@ -17,9 +17,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ query, setQuery }) => {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />
-                    <button className="btn btn-dark" onClick={() => setQuery(query)}>
-                        Search
-                    </button>
                 </div>
             </div>
         </div>
