@@ -24,3 +24,23 @@ services:
       - /app/node_modules  # Prevents overwriting node_modules with the host machine
     environment:
       - NODE_ENV=development
+      - DATABASE_HOST=database
+      - DATABASE_USER=dev
+      - DATABASE_PASSWORD=letmein
+      - DATABASE_NAME=weather_db
+
+  database:
+    image: mysql:9.1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: weather_db
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: letmein
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

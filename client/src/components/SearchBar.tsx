@@ -13,7 +13,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ query, setQuery }) => {
                     <input
                         type="text"
                         className="form-control form-control-lg"
-                        placeholder="Enter a location..."
+                        placeholder="Type region, country"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />

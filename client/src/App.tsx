@@ -53,7 +53,7 @@ function App() {
         <Earth latitude={position.lat} longitude={position.long} />
         <div className="container mt-5 d-flex flex-column" style={{ height: "100vh" }}>
           <div className="flex-grow-1 text-center">
-            <img className="icon mb-4" src="/logo.png" alt="nimbus icon"/>
+            <img className="icon mb-4" src="/logo-2.png" alt="nimbus icon"/>
             <SearchBar query={query} setQuery={setQuery} />
             <LocationList locations={locations} handleLocationSelect={handleLocationSelect} setVisible={setVisible} visible={visible} />
           </div>
