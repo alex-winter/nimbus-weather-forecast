@@ -3,6 +3,14 @@
 ## Setup
 Start the environment by running:
 
+Create a .env file with the following inside:
+
+```text
+WEATHER_API_KEY=put-your-key-here
+```
+
+Then:
+
 ```shell
 ./start.sh
 ```
