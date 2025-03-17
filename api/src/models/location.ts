@@ -1,4 +1,4 @@
-export class ApiLocation
+export class Location
 {
     constructor(
         public name: string,

@@ -1,10 +1,10 @@
-import {ApiLocation} from '../data-model'
+import {Location} from '../../../models/location'
 
-export function mapToModel(data: any): ApiLocation[] {
+export function mapToModel(data: any): Location[] {
     if (!Array.isArray(data)) return [];
 
     return data
-        .filter((item): item is ApiLocation =>
+        .filter((item): item is Location =>
             typeof item === 'object' &&
             item !== null &&
             typeof item.name === 'string' &&

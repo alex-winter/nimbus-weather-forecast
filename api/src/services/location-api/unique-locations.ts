@@ -1,7 +1,7 @@
-import {ApiLocation} from './data-model'
+import {Location} from '../../models/location'
 
-export function uniqueLocations(locations: ApiLocation[]): ApiLocation[] {
-    const uniqueLocationsMap = new Map<string, ApiLocation>();
+export function uniqueLocations(locations: Location[]): Location[] {
+    const uniqueLocationsMap = new Map<string, Location>();
 
     for (const location of locations) {
         const key = `${location.name}-${location.country}`;

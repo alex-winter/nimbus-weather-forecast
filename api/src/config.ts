@@ -1,4 +1,9 @@
+import {config as env} from 'dotenv'
+
+env()
+
 const geoLocationApiBaseUrl = 'https://geocoding-api.open-meteo.com/v1/';
+const weatherApiBaseUrl = 'https://api.weatherapi.com/v1/';
 
 export const config = {
 
@@ -8,5 +13,11 @@ export const config = {
     geoLocationApi: {
         baseUrl: geoLocationApiBaseUrl,
         search: geoLocationApiBaseUrl + 'search',
+    },
+
+    weatherApi: {
+        baseUrl: weatherApiBaseUrl,
+        forecast: weatherApiBaseUrl + 'forecast.json',
+        apiKey: process.env.WEATHER_API_KEY || '',
     },
 };

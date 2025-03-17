@@ -1,9 +1,9 @@
-import {LocationApi} from './interface'
 import {mapToModel} from './open-metro/map-to-model'
 import {uniqueLocations} from './unique-locations'
-import {ApiLocation} from './data-model'
+import {Location} from '../../models/location'
+import {LocationApi} from './interface'
 
-export class Api
+export class Repository
 {
     constructor(
         private readonly locationApi: LocationApi,
@@ -11,7 +11,7 @@ export class Api
     {
     }
 
-    public async search(query: string): Promise<ApiLocation[]> {
+    public async search(query: string): Promise<Location[]> {
         const rawData = await this.locationApi.search(query);
         const locations = mapToModel(rawData)
 
