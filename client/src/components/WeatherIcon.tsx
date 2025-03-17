@@ -5,10 +5,15 @@ import { faSun, faCloud, faCloudRain, faSnowflake, faWind } from "@fortawesome/f
 const getWeatherIcon = (description: string) => {
     const text = description.trim().toLowerCase();
 
-    if (text.includes("rain")) return <FontAwesomeIcon className="weather-icon" icon={faCloudRain} />;
-    if (text.includes("snow")) return <FontAwesomeIcon className="weather-icon" icon={faSnowflake} />;
-    if (text.includes("cloud")) return <FontAwesomeIcon className="weather-icon" icon={faCloud} />;
-    if (text.includes("sun")) return <FontAwesomeIcon className="weather-icon" icon={faSun} />;
+    if (text.includes("rain")) {
+        return <FontAwesomeIcon className="weather-icon" icon={faCloudRain}/>;
+    }
+    if (text.includes("snow") || text.includes('ice')) {
+        return <FontAwesomeIcon className="weather-icon" icon={faSnowflake}/>;
+    }
+    if (text.includes("sun")) {
+        return <FontAwesomeIcon className="weather-icon" icon={faSun}/>;
+    }
 
     return <FontAwesomeIcon className="weather-icon" icon={faCloud} />;
 };

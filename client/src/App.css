@@ -35,21 +35,24 @@ body {
     padding: 20px;
 }
 .weather-icon.fa-sun {
-    color: #f4c069; /* Warm pastel yellow */
+    color: #f4c069;
 }
 .weather-icon.fa-cloud-rain {
-    color: #89b8c2; /* Muted pastel blue-gray */
+    color: #89b8c2;
 }
 .weather-icon.fa-cloud {
-    color: #c4c4c4; /* Soft pastel gray */
+    color: #c4c4c4;
+}
+.weather-icon.fa-snowflake {
+    color: #a0d8e3;
 }
 
 .temp-highs {
-    color: #ff6f61; /* Pastel coral for high temperatures */
+    color: #ff6f61;
 }
 
 .temp-lows {
-    color: #6a9bd1; /* Pastel sky blue for low temperatures */
+    color: #6a9bd1;
 }
 
 .card {
@@ -57,8 +60,8 @@ body {
 }
 
 .earth-canvas {
-    height: "100vh";
-    width: "100vw";
+    height: 100vh;
+    width: 100vw;
     position: fixed !important;
     opacity: 0.5;
     top: 0;
