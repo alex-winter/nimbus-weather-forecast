@@ -1,12 +1,12 @@
 {
-  "name": "my-app",
+  "name": "nimbus-weather-forecast-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint my-app",
+    "lint": "eslint nimbus-weather-forecast-client",
     "preview": "vite preview"
   },
   "dependencies": {
