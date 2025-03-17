@@ -28,7 +28,7 @@ services:
       - DATABASE_USER=dev
       - DATABASE_PASSWORD=letmein
       - DATABASE_NAME=weather_db
-      - CORS_ALLOW_ORIGIN=http://localhost:5173/
+      - CORS_ALLOW_ORIGIN=http://localhost:5173
 
   database:
     image: mysql:9.1
