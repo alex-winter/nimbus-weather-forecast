@@ -27,10 +27,25 @@ export class Locations
         }
 
         try {
-            await databaseConnection('locations').insert(locations);
+            const uniqueLocations = [];
+
+            for (const location of locations) {
+                const existing = await databaseConnection('locations')
+                    .where('name', location.name)
+                    .andWhere('country', location.country)
+                    .first();
+
+                if (!existing) {
+                    uniqueLocations.push(location);
+                }
+            }
+
+            // Insert only unique locations
+            if (uniqueLocations.length) {
+                await databaseConnection('locations').insert(uniqueLocations);
+            }
         } catch (error) {
             console.error('Failed to insert locations:', error);
-
             /**
              * Something like sentry here
              */

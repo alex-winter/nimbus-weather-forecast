@@ -1,5 +1,5 @@
-import {Locations} from '../../../../src/services/database/locations'
-import {databaseConnection} from '../../../../src/services/database/database-connection'
+import { Locations } from '../../../../src/services/database/locations';
+import { databaseConnection } from '../../../../src/services/database/database-connection';
 
 describe('Locations Integration Test', () => {
     let sut: Locations;
@@ -13,6 +13,13 @@ describe('Locations Integration Test', () => {
 
     afterAll(async () => {
         await databaseConnection.destroy();
+    });
+
+    beforeEach(async () => {
+        // Ensure the locations table is truncated before each test
+        await databaseConnection.raw('SET FOREIGN_KEY_CHECKS = 0;');
+        await databaseConnection('locations').truncate();
+        await databaseConnection.raw('SET FOREIGN_KEY_CHECKS = 1;');
     });
 
     it('should insert locations into the database', async () => {
@@ -32,6 +39,23 @@ describe('Locations Integration Test', () => {
                 expect.objectContaining({ name: 'Berlin', country: 'Germany' }),
             ])
         );
+    });
+
+    it('should not insert duplicate locations', async () => {
+        const locations = [
+            { name: 'New York', country: 'USA', latitude: 40.7128, longitude: -74.006 },
+            { name: 'York', country: 'UK', latitude: 53.9586, longitude: -1.0828 },
+        ];
+
+        // First insertion should succeed
+        await sut.insert(locations);
+
+        // Attempt to insert the same locations again
+        await sut.insert(locations);
+
+        // Verify that only unique locations were inserted
+        const storedLocations = await databaseConnection('locations').select('*');
+        expect(storedLocations).toHaveLength(2); // Should still be 2, not 4
     });
 
     it('should return matching locations from the database', async () => {
