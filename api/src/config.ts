@@ -7,6 +7,8 @@ const weatherApiBaseUrl = 'https://api.weatherapi.com/v1/';
 
 export const config = {
 
+    corsAllowOrigin: process.env.CORS_ALLOW_ORIGIN,
+
     minLocationSearch: 2,
     maxLocationResults: 6,
 
