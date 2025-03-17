@@ -15,7 +15,7 @@ export function mapToModel(data: any): DayForecast[] {
             typeof item.day.maxwind_kph === 'number'
         )
         .map(item => new DayForecast(
-            item.day.date,
+            item.date,
             item.day.condition.text,
             item.day.maxtemp_c,
             item.day.mintemp_c,

@@ -1,0 +1,66 @@
+html, body {
+}
+
+body {
+    background-color: #3f3f3f;
+    color: #333333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.icon {
+    width: 200px;
+    position: sticky;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #333333;
+}
+
+.search-container {
+    border-radius: 4px;
+}
+
+.weather-icon {
+    font-size: 5em;
+    padding: 20px;
+}
+.weather-icon.fa-sun {
+    color: #f4c069; /* Warm pastel yellow */
+}
+.weather-icon.fa-cloud-rain {
+    color: #89b8c2; /* Muted pastel blue-gray */
+}
+.weather-icon.fa-cloud {
+    color: #c4c4c4; /* Soft pastel gray */
+}
+
+.temp-highs {
+    color: #ff6f61; /* Pastel coral for high temperatures */
+}
+
+.temp-lows {
+    color: #6a9bd1; /* Pastel sky blue for low temperatures */
+}
+
+.card {
+    width: 240px;
+}
+
+.earth-canvas {
+    height: "100vh";
+    width: "100vw";
+    position: fixed !important;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+}
