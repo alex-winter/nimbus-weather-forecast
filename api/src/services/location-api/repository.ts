@@ -16,7 +16,7 @@ export class Repository
     public async search(query: string): Promise<Location[]> {
         const existingLocations = await this.locationDatabase.search(query)
 
-        if (existingLocations.length) {
+        if (existingLocations.length > 0) {
             return existingLocations
         } else {
             const rawData = await this.locationApi.search(query);
