@@ -1,4 +1,4 @@
-import {Location} from '../../models/location'
+import {Location} from '../models/location'
 
 export function uniqueLocations(locations: Location[]): Location[] {
     const uniqueLocationsMap = new Map<string, Location>();

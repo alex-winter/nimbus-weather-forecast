@@ -1,5 +1,5 @@
 import {mapToModel} from './open-metro/map-to-model'
-import {uniqueLocations} from './unique-locations'
+import {uniqueLocations} from '../unique-locations'
 import {Location} from '../../models/location'
 import {LocationApi} from './interface'
 import {Locations} from '../database/locations'
