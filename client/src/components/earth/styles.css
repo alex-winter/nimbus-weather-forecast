@@ -1,0 +1,8 @@
+.earth-canvas {
+    height: 100vh;
+    width: 100vw;
+    position: fixed !important;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+}

@@ -6,7 +6,7 @@ import LocationList from "./components/LocationList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import WeatherForecastDisplay from "./components/WeatherForecastDisplay";
-import Earth from './components/Earth'
+import Earth from './components/earth/Earth.tsx'
 
 interface Position {
   long: number;
