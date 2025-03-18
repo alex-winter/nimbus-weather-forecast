@@ -20,11 +20,12 @@ export class Repository
             return existingLocations
         } else {
             const rawData = await this.locationApi.search(query);
-            const locations = mapToModel(rawData)
+            const locations = mapToModel(rawData);
+            const unique = uniqueLocations(locations);
 
-            this.locationDatabase.insert(locations)
+            this.locationDatabase.insert(unique)
 
-            return uniqueLocations(locations)
+            return unique
         }
     }
 }

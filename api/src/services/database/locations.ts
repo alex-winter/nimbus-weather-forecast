@@ -40,7 +40,6 @@ export class Locations
                 }
             }
 
-            // Insert only unique locations
             if (uniqueLocations.length) {
                 await databaseConnection('locations').insert(uniqueLocations);
             }
