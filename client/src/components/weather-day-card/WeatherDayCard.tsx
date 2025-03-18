@@ -1,17 +1,28 @@
-import React from "react";
-import { WeatherForecast } from "../services/fetch-weather";
+import React, { useEffect, useState } from "react";
+import { WeatherForecast } from "../../services/fetch-weather.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown, faWind } from "@fortawesome/free-solid-svg-icons";
 import { format, parseISO } from "date-fns";
-import getWeatherIcon from "./WeatherIcon";
+import getWeatherIcon from "../WeatherIcon.tsx";
+import './styles.css'
 
 interface WeatherCardProps {
     forecast: WeatherForecast;
 }
 
-const WeatherCard: React.FC<WeatherCardProps> = ({ forecast }) => {
+const WeatherDayCard: React.FC<WeatherCardProps> = ({ forecast }) => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
-        <div className="card h-100">
+        <div className={`card h-100 weather-card ${isVisible ? 'weather-card-visible' : ''}`}>
             <div className="card-body d-flex flex-column justify-content-between">
                 <h5 className="card-title text-center">{format(parseISO(forecast.date), "EEEE / MMM d")}</h5>
                 <p className="text-center">{getWeatherIcon(forecast.description)}</p>
@@ -24,4 +35,4 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ forecast }) => {
     );
 };
 
-export default WeatherCard;
+export default WeatherDayCard;

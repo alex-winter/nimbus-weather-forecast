@@ -1,6 +1,6 @@
 import React from "react";
 import { WeatherForecast } from "../services/fetch-weather";
-import WeatherCard from "./WeatherCard";
+import WeatherDayCard from "./weather-day-card/WeatherDayCard.tsx";
 
 interface WeatherForecastProps {
     weather: WeatherForecast[] | null;
@@ -13,7 +13,7 @@ const WeatherForecastDisplay: React.FC<WeatherForecastProps> = ({ weather }) => 
         <div className="mt-4">
             <div className="d-flex justify-content-center gap-3 flex-wrap">
                 {weather.map((day, index) => (
-                    <WeatherCard key={index} forecast={day} />
+                    <WeatherDayCard key={index} forecast={day} />
                 ))}
             </div>
         </div>

@@ -51,35 +51,6 @@ body {
     background-color: darkred; /* Darker shade on hover for feedback */
 }
 
-.weather-icon {
-    font-size: 5em;
-    padding: 20px;
-}
-.weather-icon.fa-sun {
-    color: #f4c069;
-}
-.weather-icon.fa-cloud-rain {
-    color: #89b8c2;
-}
-.weather-icon.fa-cloud {
-    color: #c4c4c4;
-}
-.weather-icon.fa-snowflake {
-    color: #a0d8e3;
-}
-
-.temp-highs {
-    color: #ff6f61;
-}
-
-.temp-lows {
-    color: #6a9bd1;
-}
-
-.card {
-    width: 240px;
-}
-
 .earth-canvas {
     height: 100vh;
     width: 100vw;
