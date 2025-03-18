@@ -1,6 +1,14 @@
 # nimbus-weather-forecast
 
 ## Setup
+
+First add a .env file to the api folder
+
+```text
+WEATHER_API_KEY=paste your key here
+```
+
+
 Start the environment by running:
 
 ```shell
