@@ -1,0 +1,31 @@
+.search-container {
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #333333;
+}
+
+.clear-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background-color: darkred;
+}

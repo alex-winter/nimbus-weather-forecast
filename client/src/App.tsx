@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LocationResult, searchLocations } from "./services/fetch-location";
 import { getWeatherForecast, WeatherForecast } from "./services/fetch-weather";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./components/search-bar/SearchBar.tsx";
 import LocationList from "./components/LocationList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";

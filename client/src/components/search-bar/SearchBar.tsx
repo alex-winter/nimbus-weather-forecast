@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 
 interface SearchBarProps {
     query: string;
@@ -23,7 +24,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ query, setQuery }) => {
                     />
                     {query && (
                         <button
-                            className="btn btn-danger position-absolute clear-button"
+                            className="btn btn-danger position-absolute clear-button p-0"
                             type="button"
                             onClick={handleClear}
                             aria-label="Clear input"
