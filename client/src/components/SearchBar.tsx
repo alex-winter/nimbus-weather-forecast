@@ -7,7 +7,7 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ query, setQuery }) => {
     const handleClear = () => {
-        setQuery(''); // Clear the input field
+        setQuery('');
     };
 
     return (
@@ -21,14 +21,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ query, setQuery }) => {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />
-                    {query && ( // Only show the clear button if there is text in the input
+                    {query && (
                         <button
                             className="btn btn-danger position-absolute clear-button"
                             type="button"
                             onClick={handleClear}
                             aria-label="Clear input"
                         >
-                            <span style={{ color: 'white', fontSize: '16px', fontWeight: 'bold' }}>×</span> {/* Cross icon */}
+                            <span style={{ color: 'white', fontSize: '16px', fontWeight: 'bold' }}>×</span>
                         </button>
                     )}
                 </div>
