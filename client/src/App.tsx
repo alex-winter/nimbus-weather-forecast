@@ -51,7 +51,7 @@ function App() {
   return (
       <>
         <Earth latitude={position.lat} longitude={position.long} />
-        <div className="container d-flex flex-column" style={{ height: "100vh" }}>
+        <div className="container d-flex flex-column">
           <div className="flex-grow-1 text-center">
             <img className="icon m-4" src="/logo-2.png" alt="nimbus icon"/>
             <SearchBar query={query} setQuery={setQuery} />

@@ -6,6 +6,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 .icon {
@@ -24,6 +25,30 @@ body {
 
 .search-container {
     border-radius: 4px;
+}
+
+.clear-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background-color: darkred; /* Darker shade on hover for feedback */
 }
 
 .weather-icon {
